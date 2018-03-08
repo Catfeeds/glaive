@@ -1,0 +1,8 @@
+#!/bin/sh
+PWD=`pwd`
+SERVER=$1
+cd $SERVER
+nohup python main.py -c server.conf >> start.log &
+echo $!>server.pid
+cd $PWD
+
